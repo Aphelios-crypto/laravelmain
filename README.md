@@ -1,61 +1,93 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+#   Booking System PH
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A modern Laravel-powered booking platform designed for effortless appointment and schedule management—featuring a dynamic calendar, role-based access, intuitive admin dashboards, and seamless Railway deployment.
+---
 
-## About Laravel
+##   Live Demo
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+  [laravelmain-production.up.railway.app]( https://laravelmain-production.up.railway.app )
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+##   Tech Stack
 
-## Learning Laravel
+- **Backend:** Laravel 10
+- **Frontend:** Blade + Tailwind CSS
+- **Calendar:** FullCalendar JS
+- **Interactivity:** SweetAlert2
+- **Auth:** Laravel Breeze
+- **Deployment:** Railway.app
+- **Database:** PostgreSQL (Railway)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+##   Features
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+-   User login and registration
+-   Interactive calendar for booking creation
+-   Admin-only access to user & booking management
+-   SweetAlert popups for feedback and booking forms
+-   Dashboard with booking summaries
+-   Slate-themed design for consistent UI
+-   Role-based blade logic for permissions
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+##   Setup Instructions
 
-### Premium Partners
+### 1. Clone the repository
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+```bash
+git clone https://github.com/your-username/booking-system-ph.git
+cd booking-system-ph
+2. Install dependencies
+composer install
+npm install
+3. Configure .env
+cp .env.example .env
+php artisan key:generate
+Update DB and app credentials inside .env:
+APP_NAME="Laravel"
+DB_CONNECTION=mysql
+DB_HOST=mysql.railway.internal
+DB_PORT=3306
+DB_DATABASE=railway
+DB_USERNAME=root
+DB_PASSWORD=tOBYWRiznihyTVmADfrquAwtKmDQDQMA
+4. Migrate & seed
+php artisan migrate --force
+php artisan db:seed
+5. Build assets
+npm run build
+________________________________________
+ Railway Deployment Steps
+1.	Go to Railway and create a new project.
+2.	Deploy from GitHub or manually push code.
+3.	Add PostgreSQL plugin and sync .env variables.
+4.	Set Laravel’s start command:
+php artisan serve --host=0.0.0.0 --port=$PORT
+5.	Enable HTTPS and auto-deploy if desired.
+________________________________________
+ Roles & Access
+Role	Permissions
+Admin	Manage users/bookings
+User	View & create bookings
+________________________________________
+ UI Overview
+•	 Landing page with login/register modal
+•	 Dashboard with booking summary cards
+•	 FullCalendar view with booking interactivity
+•	 Manage users table with role column
+•	 Editable booking form with SweetAlert modal
+________________________________________
+ Booking Flow
+1.	User logs in
+2.	Selects date from calendar
+3.	Fills modal form (title, time, duration, description)
+4.	Booking is saved via AJAX
+5.	Calendar auto-refreshes and reflects new event
+________________________________________
+ Credits
+Built by Jann Patrick G. Palma
+Tagline: “Your smart solution for effortless booking and scheduling.”
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
